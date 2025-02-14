@@ -4,7 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curio.us - AI Learning</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- CSS को HTML में ही लिख रहे हैं -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -15,6 +33,17 @@
         <button onclick="fetchData()">Ask AI</button>
         <p id="response"></p>
     </main>
-    <script src="script.js"></script>
+
+    <!-- JavaScript को HTML में ही लिख रहे हैं -->
+    <script>
+        function fetchData() {
+            fetch('http://127.0.0.1:5000/ask')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('response').innerText = data;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
 </body>
 </html>
