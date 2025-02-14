@@ -37,7 +37,7 @@
     <!-- JavaScript को HTML में ही लिख रहे हैं -->
     <script>
         function fetchData() {
-            fetch('https://apppy-jrej.onrender.com/ask')
+            fetch('http://0.0.0.0:10000/ask')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('response').innerText = data;
